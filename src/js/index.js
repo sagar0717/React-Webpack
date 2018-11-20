@@ -5,8 +5,8 @@ import store from "./store/index";
 import App from "./components/app";
 
 render(
-    <Provider store={store}>
-        <App />
-    </Provider>,
-    document.getElementById("app")
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById("root")
 );

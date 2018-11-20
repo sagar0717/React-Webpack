@@ -17,6 +17,14 @@ module.exports = {
             loader: "html-loader"
           }
         ]
+      },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"]
+      },
+      {
+        test: /\.(png|svg|jpg|gif|ico)$/,
+        use: ["file-loader"]
       }
     ]
   },
@@ -25,7 +33,7 @@ module.exports = {
   },
   output: {
     path: __dirname + "/dist",
-    publicPath: "/",
+    publicPath: "",
     filename: "bundle.js"
   },
   devServer: {
@@ -34,7 +42,8 @@ module.exports = {
   plugins: [
     new HtmlWebPackPlugin({
       template: "./public/index.html",
-      filename: "./index.html"
-    }),
+      filename: "./index.html",
+      favicon: "public/favicon.ico"
+    })
   ]
 };
